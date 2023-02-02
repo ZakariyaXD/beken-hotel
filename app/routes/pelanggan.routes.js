@@ -1,12 +1,12 @@
 module.exports = app => {
     const pelanggan = require('../controllers/pelanggan.controller')
-    const router = require('express').Router();
+    const r = require('express').Router();
 
-    router.get('/', pelanggan.findAll);
-    router.get('/:id', pelanggan.show);
-    router.post('/', pelanggan.create);
-    router.put('/:id', pelanggan.update);
-    router.delete('/:id', pelanggan.delete);
+    r.get('/', pelanggan.findAll);
+    r.get('/:id', pelanggan.show);
+    r.post('/', pelanggan.create);
+    r.put('/:id', pelanggan.update);
+    r.delete('/:id', pelanggan.delete);
 
-    app.use('/pelanggan', router);
+    app.use('/pelanggan', r);
 }

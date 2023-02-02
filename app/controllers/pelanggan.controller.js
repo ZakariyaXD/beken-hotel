@@ -16,7 +16,7 @@ exports.findAll = (req, res) => {
 exports.show = (req, res) => {
     const id = req.params.id
 
-    Pelanggan.findByID(id)
+    Pelanggan.findById(id)
         .then(() => res.send(data))
         .catch(err => res.status(500).send({message: err.message}));
 }
@@ -36,7 +36,7 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
     const id = req.params.id
-    Pelanggan.findByIdAndRemove
+    Pelanggan.findByIdAndRemove(id)
     .then(data => {
         if (!data){
             res.status(404).send({message: 'Data Tidak Terhapus'})
